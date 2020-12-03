@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>CADASTRO DE DESENVOLVEDORAS</title>
+</head>
+<body>
+<div class="container">
+    <h1>CADASTRO DE DESENVOLVEDORAS</h1>
+
+    <form method="POST" action="/adicionarDevs">
+        <div class="form-group">
+            <label for="nomedev"> Nome da Desenvolvedora</label>
+            <input class="form-control" type="text" name="nomeDev" id="nomeDev" th:value="${devs.nomeDev}">
+        </div>
+        <div class="form-group">
+            <label for="ceo"> CEO da Empresa </label>
+            <input class="form-control" type="text" name="ceo" id="ceo" th:value="${devs.ceo}">
+        </div>
+        <div class="form-group">
+            <label for="sede"> País da Sede</label>
+            <input class="form-control" type="text" name="paisSede" id="paisSede" th:value:="${devs.paisSede}">
+        </div>
+        <div class="form-group">
+            <label for="anofund"> Ano da Fundação </label>
+            <input class="form-control" type="text" name="anoFundacao" id="anoFundacao" th:value="${devs.anoFundacao}">
+        </div>
+        <div>
+            <input type="hidden" name="id" id="id" th:value="${devs.id}">
+        </div>
+        <div>
+            <input class="btn btn-outline-success" type="submit" value="ENVIAR">
+        </div>
+    </form>
+
+    <a class="btn btn-outline-primary" href="/devs"> VOLTAR </a>
+</div>
+<script src="/js/jquery-3.5.1.slim.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

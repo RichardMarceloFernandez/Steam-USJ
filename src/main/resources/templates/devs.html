@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>DESENVOLVEDORAS</title>
+</head>
+<body>
+<div class="container">
+    <h1> PÁGINA INICIAL - DESENVOLVEDORAS</h1>
+
+    <a class="btn btn-outline-primary" href="/cadastroDevs"> NOVA DESENVOLVEDORA</a>
+
+    <div class="border" th:if="${lista02 != null}">
+        <div class="row m-1 border-bottom" th:each="devs : ${lista02}">
+            <div class="col-6">
+                <a th:href="${'/detalhesDevs/' + devs.id}" th:text="${devs.nomeDev}"></a>
+            </div>
+            <div class="col-3 border-bottom">
+                <a class="btn btn-warning btn-sm" th:href="${'/editarDevs/' + devs.id}"> EDITAR</a>
+            </div>
+            <div class="col-3 border-bottom">
+                <a class="btn btn-danger btn-sm" th:href="${'/deletarDevs/' + devs.id}"> APAGAR</a>
+            </div>
+        </div>
+    </div>
+  
+    <a class="btn btn-outline-primary" href="/"> VOLTAR </a>
+  
+</div>   
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
